@@ -1,0 +1,19 @@
+öncelikle veri setimizi seçiyoruz
+from sklearn.datasets import load_wine 
+wine = load_wine() ile veri setimizi içe aktarıyoruz 
+train ve test splitleri yazarken;
+from sklearn.model_selection import train_test_split diyerek içe aktarmamız gerekiyor
+özelliklerimi ve hedeflerimi tanımlıyorum
+x=wine.data y=wine.target gibi
+veri setini anlamak için sorular soruyoruz bunlar feature name'ler ölçekler gibi değişmekte.
+sonrasında kullanabileceğim supervised learnin modelleri inceliyorum
+
+veriler birbirinden farklı ölçeklerde olduğu için analizin etkilenmemesi açısından ölçeklendirme yaptım;
+from sklearn.preprocessing import StandardScaler yazdım
+- fit_transform() sadece eğitim verisine uygulanır.
+- Test verisi için sadece transform() kullanılır.
+
+x_train_scaled ve x_test_scaled değişkenlerini oluşturduktan sonra modeli seçiyoruz.
+from sklearn.linear_model import LogisticRegression
+
+score() fonksiyonu modelin doğruluğunu verir.
